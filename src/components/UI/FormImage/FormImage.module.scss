@@ -1,0 +1,43 @@
+.formImage {
+  margin-right: 16px;
+  position: relative;
+  overflow: hidden;
+  border-radius: 13px;
+
+  &__delete {
+    background: rgba(0, 0, 0, 0.6);
+    color: #fff;
+    position: absolute;
+    top: 100%;
+    right: 0;
+    left: 0;
+    bottom: -100%;
+    padding-top: 32px;
+    transition: all 0.2s ease;
+  
+    svg {
+      width: 23px;
+      height: 23px;      
+    }
+  
+    p {
+      font-weight: normal;
+      font-size: 16px;
+      line-height: 26px;
+    }
+  
+    &_isShow {
+      top: 0;
+      bottom: 0;
+      border-radius: 13px;
+      cursor: pointer;
+    }
+  }
+}
+
+.formImage img {
+  width: 100%;
+  object-fit: cover;
+  display: block;
+}
+

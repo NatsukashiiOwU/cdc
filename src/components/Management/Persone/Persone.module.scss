@@ -1,0 +1,148 @@
+.persone {
+  position: relative;
+  display: flex;
+  align-items: center;
+  height: 52px;
+  box-shadow: inset 0px -1px #E0E0E0;
+
+  &:first-of-type {
+    height: 56px;
+  }
+
+  &__personHeader {
+    position: relative;
+    color: rgba(0, 0, 0, 0.87);
+    font-weight: 600;
+    font-size: 14px;
+    line-height: 24px;
+    letter-spacing: 0.15px;
+    padding-left: 16px;
+
+    &_codeClass {
+      flex: 0 0 36.6%;
+      display: flex;
+      align-items: center;
+      width: 36.6%;
+    }
+
+    &_director {
+      flex: 0 0 25.8%;
+      width: 25.8%;
+      white-space: nowrap;
+      text-overflow: ellipsis;
+    }
+
+    &_email {
+      flex: 0 0 25.8%;
+      width: 25.8%;
+    }
+
+    &_actions {
+      flex: 0 0 11.7%;
+      width: 11.7%;
+      padding-left: 9px;
+    }
+
+    &_burger {
+      position: relative;
+      flex: 0 0 11.7%;
+      width: 11.7%;
+      padding: 0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+  }
+
+  &__checkBox {
+    flex: 0 0 18px;
+    position: relative;
+    width: 18px;
+    height: 18px;
+    border: 2px solid rgba(0, 0, 0, 0.54);
+    margin-right: 12px;
+    border-radius: 5px;
+    transition: border-color .3s ease-in-out,background-color .3s ease-in-out;
+
+    &:after {
+      content: "";
+      position: absolute;
+      left: 20%;
+      top: 25%;
+      width: 10px;
+      height: 5px;
+      border: solid #fff;
+      border-width: 0 0 2px 2px;
+      opacity: 1;
+      transform: rotate(-45deg);
+      transition: opacity .3s ease-in-out;
+    }
+
+    &_checked {
+      border-color: #007DFF;
+      background-color: #007DFF;
+
+      :after {
+        opacity: 1;
+      }
+    }
+  }
+
+  &__labelInput {
+    display: none;
+  }
+
+  div > &__tooltipMenu {
+    width: 131px;
+    height: 92px;
+    left: 70px;
+    top: 6px;
+    padding: 12.5px 14px;
+    border-radius: 3px;
+    background-color: #fff;
+    --border-color: #fff;
+
+    &:after {
+      left: -8px;
+      top: 6px;
+      --semi-border: 6px;
+      --main-border: 8px;
+    }
+  }
+
+  &__burger {
+    width: 18px;
+    height: 18px;
+  }
+
+  &__tooltipButton {
+    text-align: left;
+    width: 100%;
+    white-space: nowrap;
+    background-color: transparent;
+    padding: 0;
+    border: none;
+    font-size: 12px;
+    line-height: 23px;
+    color: rgba(21, 20, 57, 0.4);
+  }
+
+  &__tooltipName {
+    left: 0;
+    top: -30px;
+    padding: 0 10px 0 7px;
+    border-radius: 3px;
+    background-color: #E5E5E5;
+    --border-color: #E5E5E5;
+    font-size: 12px;
+    line-height: 26px;
+    color: rgba(21, 20, 57, 0.4);
+
+    &:after {
+      left: 50%;
+      bottom: -8px;
+      --semi-border: 6px;
+      --main-border: 8px;
+    }
+  }
+}

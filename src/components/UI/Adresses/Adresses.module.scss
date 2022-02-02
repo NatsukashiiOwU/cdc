@@ -1,0 +1,34 @@
+.adresses {
+  display: flex;
+  align-items: center;
+
+  &__adress {
+    display: block;
+    position: relative;
+    margin-right: 17px;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 16px;
+    color: rgba(0, 0, 0, 0.54);
+
+    &:last-of-type {
+      margin-right: 0;
+      color: rgba(0, 0, 0, 0.87);
+
+      &:after {
+        display: none;
+      }
+    }
+
+    &:after {
+      content: "";
+      display: inline-block;
+      width: 7px;
+      height: 7px;
+      border-bottom: 2px solid rgba(0, 0, 0, 0.54);
+      border-right: 2px solid rgba(0, 0, 0, 0.54);
+      margin-left: 12px;
+      transform: rotate(-45deg);
+    }
+  }
+}

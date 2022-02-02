@@ -1,0 +1,517 @@
+// Центральный текст карточки Как проходить обучение и кому подойдет
+
+@mixin typo-card-big-title {
+  font-weight: 500;
+  font-size: 160px;
+  line-height: 219px;
+
+  @include mq("xxl", "xl") {
+    font-size: 120px;
+    line-height: 164px;
+  }
+
+  @include mq("xl", "lg") {
+    font-size: 86px;
+    line-height: 86px;
+  }
+
+  @include mq("lg", "md") {
+    font-size: 64px;
+    line-height: 87px;
+  }
+
+  @include mq("md", "sm") {
+    font-size: 72px;
+    line-height: 98px;
+  }
+
+  @include mq("sm") {
+    font-size: 40px;
+    line-height: 46px;
+  }
+}
+
+// Заголовки карточек
+
+@mixin typo-block-title {
+  font-size: 133px;
+  font-weight: 500;
+  line-height: 180px;
+
+  @include mq("xxl", "xl") {
+    font-size: 100px;
+    line-height: 136px;
+  }
+
+  @include mq("xl", "lg") {
+    font-size: 72px;
+    line-height: 98px;
+  }
+
+  @include mq("lg", "md") {
+    font-size: 54px;
+    line-height: 73px;
+  }
+
+  @include mq("md", "sm") {
+    font-size: 60px;
+    line-height: 82px;
+  }
+
+  @include mq("sm") {
+    font-size: 40px;
+    line-height: 46px;
+  }
+}
+
+@mixin typo-h1 {
+  font-size: 112px;
+  font-weight: 800;
+  line-height: 96px;
+  letter-spacing: -0.02em;
+
+  @include mq("xxl", "xl") {
+    font-size: 85px;
+    line-height: 85px;
+  }
+
+  @include mq("xl", "lg") {
+    font-size: 70px;
+    line-height: 60px;
+  }
+
+  @include mq("lg") {
+    font-size: 62px;
+    line-height: 65px;
+  }
+}
+
+@mixin typo-h2 {
+  font-size: 40px;
+  line-height: 56px;
+
+  @include mq("xxl", "xl") {
+    font-size: 30px;
+    line-height: 40px;
+  }
+
+  @include mq("xl", "lg") {
+    font-size: 24px;
+    line-height: 32px;
+  }
+
+  @include mq("lg") {
+    font-size: 18px;
+    line-height: 24px;
+  }
+}
+
+// Системный заголовок
+
+@mixin typo-system {
+  font-size: 40px;
+  font-weight: 700;
+  line-height: 54px;
+
+  @include mq("xxl", "xl") {
+    font-size: 30px;
+    line-height: 40px;
+  }
+
+  @include mq("xl", "lg") {
+    font-size: 24px;
+    line-height: 28px;
+  }
+
+  @include mq("lg") {
+    font-size: 20px;
+    line-height: 24px;
+  }
+}
+
+// card description
+
+@mixin type-card-description {
+  font-size: 24px;
+  line-height: 38px;
+
+  @include mq("xxl", "xl") {
+    font-size: 18px;
+    line-height: 28px;
+  }
+
+  @include mq("xl", "lg") {
+    font-size: 11px;
+    line-height: 18px;
+  }
+
+  @include mq("lg", "md") {
+    font-size: 10px;
+    line-height: 16px;
+  }
+
+  @include mq("md", "sm") {
+    font-size: 18px;
+    line-height: 28px;
+  }
+
+  @include mq("sm") {
+    font-size: 12px;
+    line-height: 20px;
+  }
+}
+
+// title карточки чем хорош наш курс, title ваше резюме Hard slill
+
+@mixin type-card-title {
+  font-size: 40px;
+  line-height: 48px;
+
+  @include mq("xxl", "xl") {
+    font-size: 30px;
+    line-height: 36px;
+  }
+
+  @include mq("xl", "lg") {
+    font-size: 24px;
+    line-height: 32px;
+  }
+
+  @include mq("lg", "md") {
+    font-size: 18px;
+    line-height: 24px;
+  }
+
+  @include mq("md", "sm") {
+    font-size: 30px;
+    line-height: 36px;
+  }
+
+  @include mq("sm") {
+    font-size: 18px;
+    line-height: 24px;
+  }
+}
+
+// h3, Текст больших кнопок
+
+@mixin typo-h3 {
+  font-size: 24px;
+  font-weight: 700;
+  line-height: 46px;
+  letter-spacing: 0.02em;
+
+  @include mq("xxl", "xl") {
+    font-size: 18px;
+    line-height: 32px;
+  }
+
+  @include mq("xl", "lg") {
+    font-size: 15px;
+    line-height: 34px;
+  }
+
+  @include mq("lg") {
+    font-size: 14px;
+    line-height: 26px;
+  }
+}
+
+// card description
+
+@mixin type-card-description {
+  font-size: 24px;
+  line-height: 38px;
+
+  @include mq("xxl", "xl") {
+    font-size: 18px;
+    line-height: 28px;
+  }
+
+  @include mq("xl", "lg") {
+    font-size: 11px;
+    line-height: 18px;
+  }
+
+  @include mq("lg", "md") {
+    font-size: 10px;
+    line-height: 16px;
+  }
+
+  @include mq("md", "sm") {
+    font-size: 18px;
+    line-height: 28px;
+  }
+
+  @include mq("sm") {
+    font-size: 12px;
+    line-height: 20px;
+  }
+}
+
+// Описание к уроку
+
+@mixin typo-description {
+  font-size: 32px;
+  line-height: 52px;
+  letter-spacing: 0.01em;
+
+  @include mq("xxl", "xl") {
+    font-size: 24px;
+    line-height: 40px;
+  }
+
+  @include mq("xl", "lg") {
+    font-size: 20px;
+    line-height: 32px;
+  }
+
+  @include mq("lg") {
+    font-size: 18px;
+    line-height: 30px;
+  }
+}
+
+// Текст сноски
+
+@mixin typo-note {
+  font-size: 28px;
+  line-height: 56px;
+  letter-spacing: 0.01em;
+
+  @include mq("xxl", "xl") {
+    font-size: 21px;
+    line-height: 40px;
+  }
+
+  @include mq("xl", "lg") {
+    font-size: 17px;
+    line-height: 40px;
+  }
+
+  @include mq("lg") {
+    font-size: 16px;
+    line-height: 30px;
+  }
+}
+
+// Поясняющий системный текст
+
+@mixin typo-system-description {
+  font-size: 24px;
+  font-weight: 500;
+  line-height: 32px;
+
+  @include mq("xxl", "xl") {
+    font-size: 18px;
+    line-height: 34px;
+  }
+
+  @include mq("xl", "lg") {
+    font-size: 14px;
+    line-height: 17px;
+  }
+
+  @include mq("lg", "md") {
+    font-size: 12px;
+    line-height: 16px;
+  }
+
+  @include mq("md", "sm") {
+    font-size: 18px;
+    line-height: 28px;
+  }
+
+  @include mq("sm") {
+    font-size: 14px;
+    line-height: 21px;
+  }
+}
+
+// Основной текст
+
+@mixin typo-main {
+  font-size: 24px;
+  line-height: 46px;
+  letter-spacing: 0.02em;
+
+  @include mq("xxl", "xl") {
+    font-size: 18px;
+    line-height: 34px;
+  }
+
+  @include mq("xl", "lg") {
+    font-size: 15px;
+    line-height: 34px;
+  }
+
+  @include mq("lg") {
+    font-size: 14px;
+    line-height: 26px;
+  }
+}
+
+// Текст иптут
+
+@mixin type-input {
+  font-size: 22px;
+  line-height: 32px;
+
+  @include mq("xxl", "xl") {
+    font-size: 16px;
+    line-height: 24px;
+  }
+
+  @include mq("xl", "lg") {
+    font-size: 11px;
+    line-height: 18px;
+  }
+
+  @include mq("lg", "md") {
+    font-size: 10px;
+    line-height: 16px;
+  }
+
+  @include mq("md", "sm") {
+    font-size: 16px;
+    line-height: 24px;
+  }
+
+  @include mq("sm") {
+    font-size: 11px;
+    line-height: 18px;
+  }
+}
+
+// Табы, кнопки
+
+@mixin typo-button {
+  font-size: 20px;
+  line-height: 32px;
+  letter-spacing: 0.02em;
+
+  @include mq("xxl", "xl") {
+    font-size: 16px;
+    line-height: 24px;
+  }
+
+  @include mq("xl", "lg") {
+    font-size: 13px;
+    line-height: 20px;
+  }
+
+  @include mq("lg") {
+    font-size: 11px;
+    line-height: 18px;
+  }
+}
+
+// Для карточки чем хорош наш курс и Программа обучения
+
+@mixin typo-card-description {
+  font-size: 18px;
+  line-height: 32px;
+
+  @include mq("xxl", "xl") {
+    font-size: 14px;
+    line-height: 24px;
+  }
+
+  @include mq("xl", "lg") {
+    font-size: 11px;
+    line-height: 18px;
+  }
+
+  @include mq("lg", "md") {
+    font-size: 10px;
+    line-height: 16px;
+  }
+
+  @include mq("md", "sm") {
+    font-size: 14px;
+    line-height: 24px;
+  }
+
+  @include mq("sm") {
+    font-size: 12px;
+    line-height: 20px;
+  }
+}
+
+
+// Подпись к системному тексту
+
+@mixin typo-sub-system {
+  font-size: 18px;
+  line-height: 22px;
+
+  @include mq("xxl", "xl") {
+    font-size: 14px;
+    line-height: 16px;
+  }
+
+  @include mq("xl", "lg") {
+    font-size: 12px;
+    line-height: 11px;
+  }
+
+  @include mq("lg") {
+    font-size: 11px;
+    line-height: 18px;
+  }
+}
+
+// Подпись к медиа в карточках
+
+@mixin typo-sub {
+  font-size: 18px;
+  line-height: 30px;
+
+  @include mq("xxl", "xl") {
+    font-size: 14px;
+    line-height: 24px;
+  }
+
+  @include mq("xl", "lg") {
+    font-size: 11px;
+    line-height: 20px;
+  }
+
+  @include mq("lg", "md") {
+    font-size: 9px;
+    line-height: 14px;
+  }
+
+  @include mq("md", "sm") {
+    font-size: 14px;
+    line-height: 24px;
+  }
+
+  @include mq("sm") {
+    font-size: 12px;
+    line-height: 20px;
+  }
+}
+
+// Тултипы, названия уроков /модулей в меню структуры
+
+@mixin typo-name {
+  font-size: 16px;
+  line-height: 22px;
+  letter-spacing: 0.02em;
+
+  @include mq("xxl", "xl") {
+    font-size: 12px;
+    line-height: 16px;
+  }
+
+  @include mq("xl", "lg") {
+    font-size: 11px;
+    line-height: 18px;
+  }
+
+  @include mq("lg") {
+    font-size: 10px;
+    line-height: 16px;
+  }
+}

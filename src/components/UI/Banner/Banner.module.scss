@@ -1,0 +1,71 @@
+@import '../../../styles/mixins.scss';
+
+.banner {
+  width: $bannerWidth;
+  margin-left: $navbarWidth;
+  height: auto;
+  position: relative;
+  box-shadow: 0 10px 36px rgba(0, 0, 0, 0.25);
+
+  &__image  {
+    width: 100%;
+    height: 100%;
+  }
+
+  &__image img {
+    width: 100%;
+    object-fit: cover;
+    display: block;
+  }
+
+  &__title {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    margin: 0 auto;
+  }
+
+  &__textWrapper {
+    @include centerColumn;
+    margin-top: -7px;
+    margin-right: 95px;
+    width: 100%;
+    height: 100%;
+  }
+
+  &__text,
+  &__pageTitle {
+    color: #FFFFFF;
+  }
+
+  &__text {
+    text-align: center;
+    margin-right: 59px;
+    margin-top: 25px;
+
+    h1 {
+      font-weight: 700;
+      font-size: 4.5em;
+      line-height: 0.8em;
+      text-transform: uppercase;
+      margin-bottom: 6px;
+    }
+
+    span {
+      font-weight: 500;
+      font-size: 18px;
+      line-height: 3.3em;
+    }
+  }
+
+  &__pageTitle {
+    text-align: center;
+    margin-top: 46px;
+    font-weight: 400;
+    font-size: 3.1em;
+    line-height: 0.5em;
+    margin-right: 82px;
+  }
+}

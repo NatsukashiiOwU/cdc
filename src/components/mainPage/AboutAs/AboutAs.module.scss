@@ -1,0 +1,85 @@
+@import "src/styles/mixins";
+
+.aboutAs {
+  position: relative;
+  min-height: 792px;
+  background:
+    url('../../../assets/images/saly.png') no-repeat 7% 86%;
+  background-size: 17%;
+  background-color: #2F1893;
+
+  @include mq("xl") {
+    background:
+      url('../../../assets/images/saly.png') no-repeat 7% 90%;
+    background-size: 17%;
+    background-color: #2F1893;
+  }
+
+  &__image {
+    position: absolute;
+    right: 105px;
+    top: -120px;
+  }
+
+  &__contentBlock {
+    max-width: 100%;
+    padding-top: 94px;
+    display: flex;
+    margin-left: 19.5%;
+    @include mq("lg") {
+      margin-left: 15%;
+    }
+  }
+  &__contentImage {
+    margin-top: -15px;
+    img {
+      width: 100%;
+      object-fit: cover;
+      height: 100%;
+    }
+  }
+
+  &__content {
+    color: #fff;
+    max-width: 44.5%;
+    @include mq("xl") {
+      max-width: 36.5%;
+    }
+  }
+
+  &__contentTitle {
+    font-weight: 400;
+    font-size: 36px;
+    line-height: 15px;
+    margin: 37px 0 33px 0;
+    letter-spacing: 0.15px;
+
+    &:nth-child(1) {
+      margin-top: 30px;
+      margin-bottom: 29px;
+
+      @include mq("xl") {
+        margin-top: 15px;
+        margin-bottom: 14px;
+      }
+    }
+
+    @include mq("xl") {
+      line-height: 10px;
+      font-size: 23px;
+      margin: 20px 0 15px 0;
+    }
+  }
+
+  &__text {
+    font-size: 16px;
+    line-height: 23px;
+    letter-spacing: 0.15px;
+    margin-bottom: 21px;
+
+    @include mq("xl") {
+      font-size: 13px;
+      line-height: 17px;
+    }
+  }
+}

@@ -1,0 +1,113 @@
+.management {
+  display: grid;
+  grid-template-areas: "button" "mail" "content";
+  grid-template-rows: repeat(3, auto);
+  grid-template-columns: 100%;
+
+  &_letterOpen {
+    grid-template-areas: "mail" "content" "button";
+  }
+
+  &__button {
+    grid-area: button;
+    width: 100%;
+    color: #fff;
+    background-color: #25DAC5;
+    border: none;
+    border-radius: 100px;
+    margin-bottom: 40px;
+  }
+
+  &__letter {
+    display: flex;
+    flex-direction: column;
+    height: 0;
+    overflow: hidden;
+    transition: height 2s ease;
+
+    &_open {
+      height: 375px;
+    }
+  }
+
+  &__input {
+    width: 100%;
+    margin-bottom: 22.5px;
+    padding: 15px 23px;
+    border: 2px solid rgba(143, 154, 183, 0.6);
+    border-radius: 9px;
+
+    &_content {
+      flex: 0 0 150px;
+      height: 150px;
+      resize: none;
+    }
+  }
+
+  &__addFiles {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 20px;
+    color: #9A9CAD;
+    margin-bottom: 38px;
+  }
+
+  &__buttonFile {
+    color: #9A9CAD;
+    background-color: transparent;
+    border: 1px solid #9A9CAD;
+    margin-left: 35px;
+
+    &:first-of-type {
+      margin-left: 60px;
+    }
+  }
+
+  &__letterTitle {
+    font-size: 16px;
+    line-height: 26px;
+    color: #2F1893;
+    margin-bottom: 12.5px;
+  }
+
+  &__content {
+    grid-area: content;
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 38px;
+  }
+
+  &__modalContent {
+    width: 87%;
+    color: #FFFFFF;
+
+    h3 {
+      font-weight: bold;
+      font-size: 26px;
+      line-height: 39px;
+    }
+
+    p {
+      font-weight: normal;
+      font-size: 18px;
+      line-height: 27px;
+    }
+  }
+
+  &__modalButtons {
+    margin-top: 20px;
+  }
+
+  &__modalButton {
+    background: #25DAC5;
+    border-radius: 100px;
+    color: #FFF;
+    text-transform: uppercase;
+    margin-right: 11px;
+  }
+
+
+}

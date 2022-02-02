@@ -1,0 +1,32 @@
+.formRegistration {
+  width: 66%;
+  color: #fff;
+
+  &__title {
+    margin-bottom: 13px;
+
+    h2 {
+      font-weight: bold;
+      font-size: 26px;
+      line-height: 39px;
+    }
+
+    span {
+      font-weight: 400;
+      font-size: 18px;
+      line-height: 27px;      
+    }
+  }
+
+  &__submit {
+    width: 307px;
+    height: 57px;
+    background: #0575E6;
+    color: #fff;
+    border-radius: 30px;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 21px;
+    border: none;
+  }
+}

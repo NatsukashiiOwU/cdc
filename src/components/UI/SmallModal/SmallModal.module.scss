@@ -1,0 +1,29 @@
+.smallModal {
+  position: fixed;
+  top: 10%;
+  left: 22.5%;
+  right: 0;
+  width: 100%;
+  height: 100%;
+  max-width: 1038px;
+  max-height: 705px;
+  background: rgba(47, 24, 147, 0.65);
+  backdrop-filter: blur(76px);
+  border-radius: 24px;
+  padding: 255px 363px 280px 364px;
+  z-index: 10;
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.3s ease;
+
+  &_open {
+    opacity: 1;
+    visibility: visible;
+  }
+
+  @media (max-width: 1440px) {
+    padding: 155px 233px 140px 233px;
+    max-width: 769px;
+    max-height: 464px;
+  }
+}

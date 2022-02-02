@@ -1,0 +1,71 @@
+.newsMap {
+  display: flex;
+  align-items: center;
+  margin: 22px 0;
+
+  &__text {
+    font-weight: 500;
+    font-size: 12px;
+    line-height: 20px;
+    letter-spacing: 0.4px;
+
+    &_title {
+      margin-right: 7px;
+      color: rgba(0, 0, 0, 0.54);
+    }
+
+    &_number {
+      margin-right: 25px;
+      color: rgba(0, 0, 0, 0.87);
+    }
+  }
+
+  &__select {
+    margin-right: 19px;
+    font-size: 12px;
+    line-height: 20px;
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+  }
+
+  &__arrows {
+    position: relative;
+    display: flex;
+    height: 48px;
+  }
+
+  &__arrow {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 48px;
+    height: 48px;
+    border-radius: 12px;
+    z-index: 10;
+
+    &::after {
+      content: "";
+      width: 10px;
+      height: 10px;
+      transform: rotate(-45deg);
+      transition: border-color 0.3s ease-in-out;
+      cursor: pointer;
+    }
+
+    &_arrowPrev::after {
+      border-top: 2px solid rgba(0, 0, 0, 0.54);
+      border-left: 2px solid rgba(0, 0, 0, 0.54);
+    }
+
+    &_arrowNext::after {
+      border-bottom: 2px solid rgba(0, 0, 0, 0.54);
+      border-right: 2px solid rgba(0, 0, 0, 0.54);
+    }
+
+    &_active::after {
+      border-color: rgba(0, 0, 0, 0.87);
+    }
+  }
+}

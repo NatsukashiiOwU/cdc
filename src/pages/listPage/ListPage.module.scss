@@ -1,0 +1,28 @@
+@import '../../styles/mixins.scss';
+
+.codeClasses {
+
+  margin: 0 375px;
+
+  &__wrapper {
+    display: flex;
+  }
+
+  &__codeClassesMap {
+    margin: 39px 0 35px 0;
+  }
+
+  &__items {
+    width: 73%;
+    margin-right: 2px;
+    margin-top: 17px;
+  }
+
+  &__codeClassesPag {
+    margin: 11px 0 207px 0;
+  }
+
+  @media (max-width: 1440px) {
+    margin: 0 200px;
+  }
+}

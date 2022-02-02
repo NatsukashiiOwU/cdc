@@ -1,0 +1,19 @@
+.icon {
+  width: 33.6px;
+  height: 33.6px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 6px;
+
+  &_circle {
+    background-color: #fff;
+    border-radius: 50%;
+    box-shadow: 0 0 3px 0.5px #e4eaef;
+  }
+
+  svg {
+    width: 100%;
+    height: 100%;
+  }
+}

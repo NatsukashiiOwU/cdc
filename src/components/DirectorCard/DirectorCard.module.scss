@@ -1,0 +1,99 @@
+.directorCard {
+  width: 370px;
+  height: 568px;
+  border: 1px solid #D3D3D3;
+  border-radius: 7px;
+  margin: 0 auto;
+  float: right;
+
+  &__empty {
+    height: 476px;
+  }
+
+  &__container {
+    max-width: 270px;
+    margin: 0 auto;
+  }
+
+  &__title {
+    margin-top: 40px;
+    margin-bottom: 14px;
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 28px;
+  }
+
+  &__block {
+    margin-bottom: 15px;
+  }
+
+  &__individual {
+    display: flex;
+    align-items: center;
+  }
+
+  &__notAvatar {
+    width: 70px;
+    height: 70px;
+    margin-right: 30px;
+    background-color: #DBDFE1;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  &__notAvatarImg {
+    width: 40px;
+    height: 40px;
+  }
+
+  &__individualAvatar {
+    margin-right: 30px;
+    width: 90px;
+  }
+
+  &__individualImg {
+    width: 70px;
+    height: 70px;
+  }
+
+  &__text {
+    font-weight: 500; 
+    font-size: 16px;
+    line-height: 20px;
+    color: #9A9CAD;
+  }
+
+  &__textStat {
+    width: 117px;
+    margin-right: 45px;
+  }
+
+  &__titleName {
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 20px;
+  }
+
+  &__statisticsBlock {
+    display: flex;
+    align-items: center;
+    margin-bottom: 34px;
+  }
+
+  &__statisticsCount {
+    color:#fff;
+    border-radius: 5px;
+    width: 100px;
+    height: 30px;
+    background-color: #F2994A;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  &__nthChild {
+    background-color: #27AE60;
+  }
+}

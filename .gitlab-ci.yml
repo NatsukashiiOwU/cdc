@@ -1,0 +1,27 @@
+stages:
+  - demo
+
+demo:
+  stage: demo
+  image: docker/compose:latest
+  services:
+    - docker:dind
+  variables:
+    DOCKER_HOST: "ssh://$SSH_DEMO_USER@$SSH_DEMO_HOST"
+    CONTAINER_NAME: "$CI_COMMIT_REF_NAME"
+  before_script:
+    - mkdir -p ~/.ssh/
+    - echo -e 'Host *\n\tStrictHostKeyChecking no\n\n' > ~/.ssh/config
+    - echo "$SSH_DEMO_KEY" > ~/.ssh/id_rsa
+    - chmod 400 ~/.ssh/id_rsa
+  script:
+    - CONTAINER_NAME=$( echo ${CONTAINER_NAME} | tr _ - | tr . - | tr / _ )
+    - docker-compose -p=cdc_${CONTAINER_NAME} up -d --build
+  except:
+    variables:
+      - $CI_MERGE_REQUEST_TITLE !~ /^BUILD:\[\d+\](.+)$/
+  only:
+    refs:
+      - merge_requests
+  environment:
+    name: review/$CI_COMMIT_REF_NAME

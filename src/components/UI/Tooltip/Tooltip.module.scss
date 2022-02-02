@@ -1,0 +1,39 @@
+@import '../../../styles/mixins.scss';
+
+.tooltip {
+  position: absolute;
+  border-radius: 15px;
+  bottom: 27px;
+  left: 77px;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity .3s ease-in-out;
+
+  &:after {
+    content: "";
+    position: absolute;
+    width: 0;
+    height: 0;
+  }
+
+  &_right {
+    &:after {
+      border-top: var(--semi-border) solid transparent;
+      border-bottom: var(--semi-border) solid transparent;
+      border-right: var(--main-border) solid var(--border-color);
+    }
+  }
+
+  &_top {
+    &:after {
+      border-left: var(--semi-border) solid transparent;
+      border-right: var(--semi-border) solid transparent;
+      border-top: var(--main-border) solid var(--border-color);
+    }
+  }
+
+  &_open {
+    pointer-events: auto;
+    opacity: 0.95;
+  }
+}

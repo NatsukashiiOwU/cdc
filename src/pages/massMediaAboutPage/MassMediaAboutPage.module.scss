@@ -1,0 +1,15 @@
+@import '../../styles/mixins.scss';
+
+.smiAboutUs {
+  margin-left: $navbarWidth;
+  padding: 0 378px 0 278px;
+  margin-bottom: 500px ;
+
+  &__smiAboutUsMap {
+    margin-top: 40px;
+  }
+ 
+  @media (max-width: 1440px) {
+    padding: 0 278px 0 178px;
+  }
+}

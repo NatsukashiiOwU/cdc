@@ -1,0 +1,268 @@
+.events {
+  background: #2F1893;
+  padding: 70px 19% 125px 11%;
+  position: relative;
+
+  &__desc {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  &__titleBlock {
+    padding: 0 0 0 164px;
+    color: #FFFFFF;
+    margin-bottom: 63px;
+  }
+
+  &__titleBlock h3 {
+    margin-bottom: 24px;
+    font-weight: 600;
+    font-size: 42px;
+    line-height: 52px;
+    letter-spacing: 1.2px;
+  }
+
+  &__text {
+    font-weight: 400;
+    font-size: 22px;
+    line-height: 32px;
+    color: rgba(255, 255, 255, 0.8);
+    letter-spacing: 0.5px;
+  }
+
+  &__buttonWrap {
+    margin-top: 60px;
+    margin-right: 12px;
+  }
+
+  &__button {
+    background: transparent;
+    color: #F2F2F2;
+    border: 1px solid #F2F2F2;
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 26px;
+  }
+
+  &__wrapper,
+  &__item,
+  &__itemTitleBlock,
+  &__itemDate {
+    display: flex;
+  }
+
+  &__itemDate {
+    align-items: center;
+
+  }
+
+  &__item {
+    margin-bottom: 23px;
+  }
+
+  &__blockImage {
+    margin: 0 47px 0 12px;
+  }
+
+  &__itemDesc {
+    margin-left: 36px;
+  }
+
+  &__itemImage {
+    width: 82%;
+  }
+
+  &__itemDate {
+    margin-bottom: 15px;
+  }
+
+  &__itemTitleBlock {
+    margin: 15px 0;
+    align-items: center;
+  }
+
+  &__eventList {
+    width: 670px;
+    padding-top: 16px;
+  }
+
+  &__ItemDateNumber {
+    font-weight: 700;
+    letter-spacing: -1px;
+    font-size: 48px;
+    line-height: 62px;
+    color: #FFFFFF;
+  }
+
+  &__itemDateMonths {
+    margin: 2px 0 0 24px;
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 21px;
+    display: flex;
+    flex-direction: column;
+    color: #FFFFFF;
+  }
+
+  &__itemLogo {
+    width: 16%;
+  }
+
+  &__itemTitle {
+    padding: 0 25px;
+    letter-spacing: 0.5px;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 26px;
+    color: rgba(255, 255, 255, 0.7);
+  }
+
+  &__itemDescription {
+    padding: 0 6px;
+    letter-spacing: 0.4px;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 22px;
+    color: #FFFFFF;
+  }
+
+  &__sliderButtons {
+    width: auto;
+    height: auto;
+    position: absolute;
+    right: 24.5%;
+    bottom: 105px;
+  }
+
+  &__sliderButtonsWrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  &__sliderButtonDown, &__sliderButtonUp {
+    padding: 0;
+    font-size: 0;
+  }
+
+  &__sliderButtonDown {
+    position: relative;
+
+    &::after {
+      content: url('../../../assets/images/Events/sliderButton.png');
+      position: absolute;
+      top: 0;
+      left: 0;
+    }
+  }
+
+  &__sliderButtonUp {
+    position: relative;
+    transform: rotate(0.5turn);
+
+    &::after {
+      content: url('../../../assets/images/Events/sliderButton.png');
+      position: absolute;
+      top: -19px;
+      right: 53px;
+    }
+  }
+
+  @media (max-width: 1440px) {
+    padding: 62px 19% 110px 11%;
+
+    &__titleBlock {
+      padding: 0 0 0 110px;
+    }
+
+    &__titleBlock h3 {
+      margin-bottom: 10px;
+      font-size: 34px;
+      line-height: 42px;
+    }
+
+    &__text {
+      font-size: 18px;
+      line-height: 28px;
+    }
+
+    &__buttonWrap {
+      margin-top: 30px;
+    }
+
+    &__button {
+      font-weight: 500;
+      font-size: 15px;
+      line-height: 19px;
+    }
+
+    &__item,
+    &__itemTitleBlock,
+    &__itemDate {
+      display: flex;
+    }
+
+    &__itemDate {
+      align-items: center;
+
+    }
+
+    &__item {
+      margin-bottom: 15px;
+    }
+
+    &__blockImage {
+      margin: 0 47px 0 12px;
+    }
+
+    &__itemDesc {
+      margin-left: 25px;
+    }
+
+    &__itemImage {
+      width: 73%;
+    }
+
+    &__itemDate {
+      margin-bottom: 15px;
+    }
+
+    &__itemTitleBlock {
+      margin: 10px 0;
+      align-items: center;
+    }
+
+    &__eventList {
+      width: 670px;
+      padding-top: 10px;
+    }
+
+    &__ItemDateNumber {
+      font-size: 36px;
+      line-height: 42px;
+      color: #FFFFFF;
+    }
+
+    &__itemDateMonths {
+      font-size: 15px;
+      line-height: 17px;
+    }
+
+    &__itemLogo {
+      width: 63px;
+    }
+
+    &__itemTitle {
+      padding: 0 18px;
+      font-size: 12px;
+      line-height: 18px;
+    }
+
+    &__itemDescription {
+      padding: 0 3px;
+      font-size: 10px;
+      line-height: 16px;
+      color: #FFFFFF;
+    }
+  }
+}

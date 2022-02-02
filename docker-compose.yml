@@ -1,0 +1,12 @@
+version: '3.8'
+
+services:
+  application:
+    restart: unless-stopped
+    build: .
+    container_name: container_cdc_${CONTAINER_NAME}
+
+networks:
+  default:
+    external:
+      name: server

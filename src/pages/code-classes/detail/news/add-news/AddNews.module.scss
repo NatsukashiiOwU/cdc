@@ -1,0 +1,85 @@
+.addNews {
+  width: 100%;
+  margin-bottom: 216px;
+
+  &__input {
+    border: 1px solid #9A9CAD;
+    border-radius: 5px;
+    padding: 10px 20px;
+  }
+
+  &__block {
+    width: 100%;
+    display: flex;
+    margin-bottom: 32px;
+
+    &:nth-child(2) {
+      margin-bottom: 40px;
+    }
+  }
+
+  &__addImg {
+    color: #9a9cad;
+    border: 1px solid #9a9cad;
+    background-color: #fff;
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 26px;
+  }
+
+  &__addDate {
+    display: flex;
+    align-items: center;
+  }
+
+  &__submitForm {
+    width: 100%;
+    height: 50px;
+    background: #25DAC5;
+    border: none;
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 26px;
+    color: #fff;
+    margin-bottom: 19px;
+  }
+
+  &__nameInput {
+    width: 570px;
+    height: 43.53px;
+    padding-left: 20px;
+    padding-right: 20px;
+
+    &::placeholder {
+      opacity: 0.4;
+      color:#9A9CAD;
+    }
+  }
+
+  &__contentInput {
+    width: 570px;
+    height: 179.24px;
+    resize: none;
+  }
+
+  &__dateInput {
+    width: 125.74px;
+    height: 26px;
+    margin-right: 5px;
+    background: #AEB0C22B;
+  }
+
+  &__dateIcon {
+    width: 20px;
+    height: 20px;
+  }
+
+  &__blockTitle {
+    width: 184px;
+    margin-left: 15px;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 20px;
+    color: #9A9CAD;
+  }
+}

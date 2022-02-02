@@ -1,0 +1,36 @@
+.codeClassesDetail {
+  $self: &;
+
+  display: block;
+
+  &__adress {
+    margin: 42px 0 28px 0;
+  }
+
+  &__toggle {
+    margin: 34px 0 31px 0;
+  }
+
+  &__newsCard {
+    margin-bottom: 34px;
+  }
+
+  &__container {
+    max-width: 1170px;
+    margin: 0 auto;
+  }
+
+  &__banners {
+    max-width: 770px;
+  }
+
+  &__wrapper {
+    display: flex;
+    justify-content: space-between;
+  }
+  @media (max-width: 1440px) {
+    #{$self}__container {
+      margin-left: 120px;
+    }
+  }
+}

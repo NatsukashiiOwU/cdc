@@ -1,0 +1,379 @@
+.footer {
+  padding: 137px 0 209px 0;
+  display: flex;
+  justify-content: center;
+  background-color: #f2f2f2;
+  box-shadow: 0 10px 36px rgba(0, 0, 0, 0.25);
+
+  &__wrapper {
+    max-width: 1164px;
+    width: 100%;
+    display: flex;
+  }
+
+  &__linksChapterSite {
+    display: flex;
+    margin-top: 41px;
+    margin-left: 2px;
+  }
+
+  &__links,
+  &__linksSocial {
+    display: flex;
+  }
+
+  &__linksSocial {
+    margin-top: 4px;
+  }
+
+  &__icons {
+    display: flex;
+    margin-top: 5px;
+  }
+
+  &__links {
+    flex-direction: column;
+  }
+
+  &__linkLogo {
+    transition: transform 0.2s ease;
+    background-color: #a4a4a4;
+    color: #e9e9e9;
+
+    & + & {
+      margin-left: 20px;
+    }
+
+    svg {
+      color: #f2f2f2;
+    }
+
+    &:hover {
+      cursor: pointer;
+      transform: scale(1.1);
+    }
+  }
+
+  &__logo {
+    width: 50px;
+    height: 50px;
+    margin-right: 47px;
+  }
+
+  &__linksMenu {
+    margin-right: 86px;
+    margin-top: 7px;
+
+    span {
+      font-weight: 500;
+      font-size: 18px;
+      line-height: 30px;
+      color: #828282;
+    }
+    ul {
+      padding: 0;
+      margin-top: 19px;
+    }
+  }
+
+  &__linksChapter {
+    max-width: 340px;
+    margin-top: 6px;
+
+    ul {
+      margin: 0;
+    }
+
+    li {
+      margin-bottom: 14px;
+    }
+  }
+
+  &__linksChapterSite li {
+    list-style-type: none;
+  }
+
+  &__linksMenu li {
+    margin-bottom: 11px;
+  }
+
+  &__link {
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 30px;
+    letter-spacing: 0.3px;
+    color: #828282;
+    text-decoration: none;
+    transition: all 0.3s ease;
+
+    &:hover {
+      cursor: pointer;
+      background-color: #e6e6e6;
+    }
+  }
+
+  &__copyright {
+    max-width: 445px;
+    width: 100%;
+    margin-top: 136px;
+    margin-left: 1px;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 30px;
+    color: #828282;
+    letter-spacing: 0.4px;
+  }
+
+  &__form {
+    margin-left: 62px;
+    max-width: 562px;
+    width: 100%;
+  }
+
+  &__form form {
+    margin-top: 32px;
+  }
+
+  &__formTitle {
+    font-weight: bold;
+    font-size: 42px;
+    line-height: 52px;
+    letter-spacing: -0.6px;
+    color: #828282;
+    margin: 0 0 23px 0;
+  }
+
+  &__formDesc {
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 26px;
+    color: #828282;
+    letter-spacing: 0.6px;
+    max-width: 567px;
+    width: 100%;
+  }
+
+  &__formEmail {
+    margin-bottom: 33px;
+    max-width: 567px;
+    width: 100%;
+  }
+
+  &__formEmail,
+  &__formMessage {
+    max-width: 567px;
+    width: 100%;
+  }
+
+  &__formName {
+    max-width: 567px;
+    width: 100%;
+  }
+
+  &__formEmail,
+  &__formMessage,
+  &__formName {
+    display: flex;
+    flex-direction: column;
+    font-weight: bold;
+    font-size: 14px;
+    line-height: 26px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: #828282;
+
+    input {
+      padding: 12px 24px;
+      height: 50px;
+      width: 100%;
+      border: 2px solid #ebeaed;
+      box-sizing: border-box;
+      border-radius: 100px;
+      background-color: transparent;
+      font-weight: 500;
+      font-size: 18px;
+      line-height: 26px;
+      display: flex;
+      align-items: center;
+      color: #828282;
+      margin-top: 10px;
+      outline: none;
+      resize: none;
+    }
+
+    textarea {
+      width: 100%;
+      height: 170px;
+      background-color: #fff;
+      border: 2px solid #ebeaed;
+      box-sizing: border-box;
+      border-radius: 10px;
+      font-weight: 400;
+      font-size: 18px;
+      line-height: 26px;
+      display: flex;
+      align-items: center;
+      padding: 10px 19px;
+      margin-top: 10px;
+      letter-spacing: 0.5px;
+      outline: none;
+      resize: none;
+
+      &::placeholder {
+        color: #d3d3d3;
+      }
+    }
+  }
+
+  &__formName {
+    width: 100%;
+    margin-right: 38px;
+  }
+
+  &__formSubmit {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 30px;
+    width: 100%;
+    margin-top: 30px;
+  }
+
+  &__formBlockButton {
+    margin-top: 36px;
+  }
+
+  &__formButton {
+    padding: 12px 17px;
+    background-color: #25dac5;
+    border-radius: 100px;
+    border: none;
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 26px;
+    color: #fff;
+  }
+
+  @media (max-width: 1440px) {
+    padding: 90px 0 140px 0;
+
+    &__wrapper {
+      max-width: 1013px;
+      display: flex;
+    }
+
+    &__link {
+      font-size: 14px;
+      line-height: 28px;
+    }
+
+    &__linksChapter {
+      width: 300px;
+
+      ul {
+        margin: 0;
+      }
+
+      li {
+        margin-bottom: 10px;
+      }
+    }
+
+    &__linksChapterSite li {
+      list-style-type: none;
+    }
+
+    &__linksMenu li {
+      margin-bottom: 8px;
+    }
+
+    &__copyright {
+      margin-top: 116px;
+      margin-left: 3px;
+      font-size: 12px;
+      line-height: 24px;
+    }
+
+    &__form {
+      margin-left: 75px;
+      max-width: 490px;
+      width: 100%;
+    }
+
+    &__form form {
+      margin-top: 2px;
+    }
+
+    &__formTitle {
+      font-size: 32px;
+      line-height: 48px;
+      margin: 0 0 18px 0;
+    }
+
+    &__formDesc {
+      font-weight: 400;
+      font-size: 12px;
+      line-height: 24px;
+    }
+
+    &__formEmail {
+      margin-bottom: 18px;
+      max-width: 567px;
+      width: 100%;
+    }
+
+    &__formEmail,
+    &__formMessage {
+      max-width: 567px;
+      width: 100%;
+    }
+
+    &__formName {
+      max-width: 397px;
+      width: 100%;
+    }
+
+    &__formEmail,
+    &__formMessage,
+    &__formName {
+      font-size: 14px;
+      line-height: 26px;
+      letter-spacing: 2px;
+
+      input {
+        padding: 12px 24px;
+        height: auto;
+        width: 86%;
+        font-size: 14px;
+        line-height: 24px;
+
+        textarea {
+          width: 86%;
+          height: 130px;
+          background-color: #fff;
+          font-size: 14px;
+          line-height: 24px;
+
+          &::placeholder {
+            color: #d3d3d3;
+          }
+        }
+      }
+    }
+
+    &__formName {
+      width: 100%;
+      margin-right: 38px;
+    }
+
+    &__formSubmit {
+      display: flex;
+      align-items: center;
+      margin-top: 20px;
+      width: 100%;
+    }
+
+    &__formBlockButton {
+      margin-top: 31px;
+    }
+  }
+}

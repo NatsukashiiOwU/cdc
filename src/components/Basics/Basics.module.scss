@@ -1,0 +1,246 @@
+@import '../../styles/mixins.scss';
+
+.basics {
+  $self: &;
+
+  position: relative;
+  height: 900px;
+  width: 100%;
+
+  &__pictureWrapper {
+    position: relative;
+    width: $bannerWidth;
+    height: 100%;
+    margin-left: $navbarWidth;
+    overflow: hidden;
+  }
+
+  &__arrow {
+    position: absolute;
+    top: 50%;
+    border-radius: 12px;
+    transform: translateY(-50%);
+    z-index: 10;
+
+    &::after {
+      content: "";
+      position: absolute;
+      width: 50px;
+      height: 50px;
+      top: 38%;
+      transform: rotate(-45deg) translate(-50%, -50%);
+      transition: border-color .3s ease-in-out;
+      cursor: pointer;
+    }
+
+    &:hover::after {
+      border-color: #FFE4E1;
+    }
+  }
+
+  &__arrowPrev {
+    left: 76px;
+
+    &::after {
+      border-top: 4px solid white;
+      border-left: 4px solid white;
+    }
+  }
+
+  &__arrowNext {
+    right: 72px;
+
+    &::after {
+      border-bottom: 4px solid white;
+      border-right: 4px solid white;
+    }
+  }
+
+  &__images {
+    position: absolute;
+    display: flex;
+    justify-content: space-between;
+    width: 200%;
+    height: 100%;
+    transition: transform 1s;
+    top: 0;
+    align-items: center;
+  }
+
+  &__contentWrapper {
+    width: 50%;
+    height: 100%;
+    color: #fff;
+    position: relative;
+    overflow: hidden;
+  }
+
+  &__img {
+    max-width: none;
+    min-width: 1920px;
+    width: 100%;
+    transform: translate(-50%, -50%);
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    z-index: 0;
+  }
+
+  &__textContent {
+    transform: translateX(-50%);
+    transition: opacity .3s ease-in-out;
+    position: absolute;
+    z-index: 0;
+    opacity: 0;
+
+    &_active {
+      opacity: 1;
+    }
+
+    &_0 {
+      width: 590px;
+      top: 200px;
+      right: 154px;
+    }
+
+    &_1 {
+      width: 660px;
+      top: 115px;
+      right: calc(50% - 1015px);
+    }
+  }
+
+  &__title {
+    text-transform: uppercase;
+    font-weight: 900;
+    font-size: 72px;
+    line-height: 90px;
+  }
+
+  &__description {
+    font-size: 18px;
+    line-height: 32px;
+    font-weight: 700;
+
+    #{$self}__textContent_1 & {
+      margin-top: 26px;
+      margin-left: 26px;
+      letter-spacing: 0.1em;
+    }
+  }
+
+  &__content {
+    margin-left: 5px;
+    font-size: 24px;
+    line-height: 34px;
+    margin-top: 34px;
+    letter-spacing: 0.025em;
+
+    &:last-child {
+      margin-top: 60px;
+      margin-bottom: 20px;
+    }
+
+    #{$self}__textContent_1 & {
+      margin-top: 32px;
+    }
+  }
+
+  &__contacts {
+    display: flex;
+    margin-top: 42px;
+    margin-left: 15px;
+    font-weight: bold;
+    font-size: 32px;
+    line-height: 26px;
+  }
+
+  &__contact {
+    &:first-of-type {
+      margin-right: 50px;
+    }
+  }
+
+  &__info {
+    position: absolute;
+    display: flex;
+    align-items: center;
+    left: 50%;
+    bottom: 0;
+    width: 1140px;
+    height: 200px;
+    border-radius: 10px;
+    background-color: white;
+    box-shadow: 0 20px 20px 0 rgba(13, 16, 37, 0.1);
+    transform: translate(-50%, 50%);
+  }
+
+  &__infoItem {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 33.3%;
+
+    &::after {
+      content: '';
+      position: absolute;
+      right: 0;
+      width: 2px;
+      height: 125px;
+      background-color: #BACCFD;
+    }
+
+    &:last-of-type::after {
+      display: none;
+    }
+
+    &_mappoint {
+      padding: 0px 13px 4px 23px;
+    }
+
+    &_database {
+      padding: 0 0 4px 38px;
+
+      &::after {
+        right: -10%;
+      }
+    }
+  }
+
+  &__infoCircle {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 55px;
+    height: 55px;
+    margin-top: 5px;
+    margin-right: 36px;
+    background: #BACCFD;
+    border-radius: 50%;
+
+    svg {
+      width: 24px;
+      height: 24px;
+      color: #5236FF;
+    }
+  }
+
+  &__itemContent {
+    display: flex;
+    flex-direction: column;
+  }
+
+  &__itemTitle {
+    font-weight: bold;
+    font-size: 25px;
+    line-height: 30px;
+    color: #1E0E62;
+  }
+
+  &__itemDescription {
+    font-weight: 500;
+    font-size: 20px;
+    color: #4F5665;
+  }
+}

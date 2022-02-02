@@ -1,0 +1,150 @@
+.cardEvent {
+
+  $self: &;
+  display: flex;
+  border: 1px solid #d0d0d0;
+  border-radius: 10px;
+
+  &__image {
+    width: 270px;
+    height: 270px;
+  }
+
+  &__content {
+    display: flex;
+    flex-direction: column;
+    padding: 10px 28px 14px 28px;
+  }
+
+  &__title {
+    font-weight: 500;
+    font-size: 28px;
+    line-height: 32px;
+    margin-bottom: 18px;
+    color: #1e0e62;
+  }
+
+  &__areaWrapper {
+    display: flex;
+    align-items: center;
+    margin-bottom: 24px;
+  }
+
+  &__iconImage {
+    flex: 0 0 45px;
+    width: 45px;
+    height: 45px;
+    margin-right: 25px;
+  }
+
+  &__area {
+    font-size: 16px;
+    line-height: 26px;
+    color: rgba(21, 20, 57, 0.4);
+  }
+
+  &__textContent {
+    font-size: 16px;
+    line-height: 26px;
+    color: rgba(21, 20, 57, 0.4);
+  }
+
+  &__captionIcon {
+    position: absolute;
+    display: none;
+    width: 110px;
+    top: -40px;
+    height: 50px;
+    font-size: 12px;
+    text-align: center;
+    border-radius: 3px;
+    background: url('../../assets/images/caption.svg') no-repeat;
+    background-size: cover;
+    color: #AEB0C2;
+  }
+
+  &__userAuthBlock {
+    position: relative;
+    margin-left: -10px;
+  }
+
+  &__userAuthBlock:hover &__captionIcon {
+    display: flex;
+    justify-content: center;
+    padding-top: 12px;
+  }
+
+  &__iconsAuth{
+    margin-right: -20px;
+    display: flex;
+    a {
+      margin: 0;
+    }
+    a:nth-child(1) {
+      margin-right: 20px;
+    }
+  }
+
+  &__interactive {
+    display: flex;
+    align-items: center;
+    margin-top: auto;
+  }
+
+  &__members {
+    display: flex;
+    align-items: center;
+    border: 1px solid #9a9cad;
+    border-radius: 5px;
+    margin-right: 76px;
+  }
+
+  &__membersText {
+    font-size: 12px;
+    color: #9a9cad;
+    padding: 0 14px;
+  }
+
+  &__membersValue {
+    display: inline-block;
+    background-color: #aeb0c2;
+    border-radius: 4px;
+    padding: 0 4px;
+    font-size: 14px;
+    font-weight: bold;
+    line-height: 26px;
+    color: #fff;
+  }
+
+  &__icons {
+    display: flex;
+    position: relative;
+    justify-content: center;
+    align-items: center;
+  }
+
+  &__circleIcon {
+    & + & {
+      margin-left: 20px;
+    }
+  }
+
+  &__userAuthIcon {
+    margin-bottom: 20px;
+  }
+
+  &__authInteractive {
+    justify-content: space-between;
+  }
+
+  &__isSmall {
+    #{$self}__image {
+      width: 170px;
+      height: 197px;
+    }
+
+    #{$self}__members {
+      margin-right: 230px;
+    }
+  }
+}

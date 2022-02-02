@@ -1,0 +1,16 @@
+{
+  "jsxSingleQuote": true,
+  "singleQuote": true,
+  "overrides": [
+    {
+      "files": ["**/*.css", "**/*.scss", "**/*.html"],
+      "options": {
+        "singleQuote": false
+      }
+    }
+  ],
+  "trailingComma": "all",
+  "printWidth": 120,
+  "arrowParens": "always",
+  "spaceBeforeFunctionParen": false
+}

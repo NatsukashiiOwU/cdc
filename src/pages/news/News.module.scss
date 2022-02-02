@@ -1,0 +1,30 @@
+.news {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background: #f3f7fa;
+  padding-bottom: 330px;
+
+  &__content {
+    display: flex;
+    flex-direction: column;
+    max-width: 1170px;
+  }
+
+  &__newsCard {
+    margin-bottom: 32px;
+
+    &:last-of-type {
+      margin-bottom: 14px;
+    }
+  }
+
+  &__newsMap {
+    margin: 40px 0;
+  }
+
+  &__search {
+    margin-bottom: 45px;
+  }
+}

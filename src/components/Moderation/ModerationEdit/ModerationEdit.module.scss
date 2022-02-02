@@ -1,0 +1,193 @@
+@import '../../../styles/mixins.scss';
+
+.moderationEdit {
+  max-width: 770px;
+  margin: 0 auto;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+
+  &__head {
+    @include centerVertical;
+  }
+
+  &__headAvatar {
+    margin-right: 30px;
+  }
+
+  &__headSectionTitle{
+    margin-right: 30px;
+  }
+
+  &__sectionTitle {
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+    float: left;
+    width: 201px;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 28px;
+    color: #9A9CAD;
+  }
+
+  &__headInfo {
+    @include centerVertical;
+  }
+
+  &__headName {
+    display: flex;
+    justify-content: flex-start;
+    width: 156px;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 28px;
+    color: #9A9CAD;
+  }
+
+  &__headTitle {
+    text-align: left;
+  }
+
+  &__schoolTitle {
+    display: flex;
+    justify-content: flex-start;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 28px;
+    color: #9A9CAD;
+
+    div {
+      width: 87%;
+    }
+  }
+
+  tr {
+    margin-bottom: 29px;
+  }
+
+  &__dateInput {
+    width: 125px;
+    height: 26px;
+    border: 1px solid #9A9CAD;
+    box-sizing: border-box;
+    border-radius: 5px;
+    padding: 0;
+    background: #E5E5E5;
+    font-weight: bold;
+    font-size: 14px;
+    line-height: 26px;
+    padding-left: 20px;
+    color: rgba(154, 156, 173, 0.75);
+    position: relative;
+    overflow: visible;
+
+    &::-webkit-calendar-picker-indicator {
+      background-image: url('../../../assets/images/ModerationEdit/date.svg');
+      position: absolute;
+      right: -37px;
+    }
+  }
+
+  &__titleInfo {
+    width: auto;
+  }
+
+  &__titleInput {
+    width: 569px;
+    border: 1px solid #9A9CAD;
+    box-sizing: border-box;
+    border-radius: 5px;
+    margin: 0;
+    background: #E5E5E5;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 20px;
+    color: #9A9CAD;
+    padding: 4px 10px 19px 19px;
+
+    span {
+      display: none;
+    }
+  }
+
+  &__numberInput {
+    width: 169px;
+    height: 26px;
+    border: 1px solid #9A9CAD;
+    box-sizing: border-box;
+    border-radius: 5px;
+    margin: 0;
+    background: #E5E5E5;
+    font-weight: bold;
+    font-size: 14px;
+    line-height: 26px;
+    color: #9A9CAD;
+    padding: 0 0 0 48px;
+  }
+
+  &__descriptionInput {
+    width: 569px;
+    height: 179px;
+    border: 1px solid #9A9CAD;
+    background: #E5E5E5;
+    box-sizing: border-box;
+    font-weight: bold;
+    font-size: 14px;
+    line-height: 26px;
+    color: #9A9CAD;
+    border-radius: 5px;
+    resize: none;
+    padding: 11px 10px 11px 19px;
+  }
+
+  &__imagesInfo {
+    display: flex;
+    padding: 12px 0;
+    max-width: 569px;
+    width: 100%;
+    height: 100%;
+
+    button {
+      height: 50px;
+      padding: 0;
+      border: none;
+    }
+  }
+
+  &__imagesButton {
+
+    &_add {
+      width: 100%;
+      height: 100%;
+      margin: 0;
+      display: none;
+    }
+  }
+
+  &__imagesButtonAddfile {
+    width: 185px;
+    height: 50px;
+    background: #E5E5E5;
+    padding: 12px 30px;
+    border: 1px solid #9A9CAD;
+    box-sizing: border-box;
+    border-radius: 100px;
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 26px;
+    color: #9A9CAD;
+
+  }
+
+  &__submitButton {
+    width: 100%;
+    padding: 12px 312px;
+    background: #25DAC5;
+    border-radius: 100px;
+    font-weight: 500;
+    color: #FFFFFF;
+    text-transform: uppercase;
+    border: none;
+  }
+}

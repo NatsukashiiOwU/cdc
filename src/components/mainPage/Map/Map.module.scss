@@ -1,0 +1,129 @@
+.map {
+  position: relative;
+  height: 1014px;
+  background-color: #F2F2F2;
+
+  &__container {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    margin-top: -1px;
+    margin-bottom: -1px;
+  }
+
+  &__ellipse {
+    width: 1110px;
+    height: 1101px;
+    border-radius: 51%;
+    background-color: #2F1893;
+    position: absolute;
+    top: -159px;
+    right: -234px;
+  }
+
+  &__planet {
+    z-index: 20;
+    position: absolute;
+    right: 0;
+    top: -387px;
+  }
+
+  &__planetImage {
+    display: block;
+  }
+
+  &__mapUlsu {
+    position: absolute;
+    left: 240px;
+    top: 180px;
+  }
+
+  &__title h1{
+    font-weight: bold;
+    margin-top: 6.77%;
+    margin-left: 19.5%;
+    font-size: 48px;
+    color: #2F1893;
+    letter-spacing: 0.9px;
+  }
+
+  &__content {
+    position: absolute;
+    right: 22.70%;
+    top: 49.6%;
+  }
+
+  &__contentText {
+    margin-left: 10px;
+    color:#fff;
+
+    h2 {
+      font-size: 50px;
+      font-weight: bold;
+      margin: 0;
+    }
+
+    span {
+      font-size: 36px;
+      font-weight: 500;
+    }
+
+    h2 span {
+      letter-spacing: 8px;
+      font-weight: bold;
+      font-size: 70px;
+    }
+  }
+  &__contentButton {
+    margin-top: 68px;
+
+    button {
+      border: none;
+      cursor: pointer;
+      color: #fff;
+      font-size: 18px;
+      padding: 14px 30px;
+      font-weight: 400;
+      letter-spacing: 0.5px;
+      background-color: #25DAC5;
+      border-radius: 40px;
+      outline: none;
+    }
+  }
+}
+
+@media (max-width: 1800px) {
+  .map {
+    height: 800px;
+  }
+
+  .map__ellipse {
+    width: 900px;
+    height: 900px;
+  }
+
+  .map__mapUlsu {
+    position: absolute;
+    left: 70px;
+    top: 180px;
+  }
+
+  .map__mapUlsuImage {
+    width: 70%;
+    height: 70%;
+  }
+
+  .map__title {
+    margin-left: 1%;
+  }
+
+  .map__title h1 {
+    font-size: 37px;
+  }
+
+  .map__content {
+    right: 10%;
+    top: 25%;
+  }
+}

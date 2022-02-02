@@ -1,0 +1,225 @@
+.newsCard {
+  $self: &;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  &__image {
+    flex: 0 0 370px;
+    width: 370px;
+    height: 350px;
+    margin-right: 38px;
+  }
+
+  &__content {
+    display: flex;
+    flex-direction: column;
+    flex: 0 0 741px;
+    width: 741px;
+    padding-right: 30px;
+  }
+
+  &__title {
+    font-weight: 500;
+    font-size: 22px;
+    line-height: 32px;
+    margin-bottom: 18px;
+    color: #1E0E62;
+  }
+
+  &__areaWrapper {
+    display: flex;
+    align-items: center;
+    margin-bottom: 18px;
+  }
+
+  &__iconImage {
+    flex: 0 0 45px;
+    width: 45px;
+    height: 45px;
+    margin-right: 25px;
+  }
+
+  &__captionIcon {
+    position: absolute;
+    display: none;
+    width: 110px;
+    top: -40px;
+    height: 50px;
+    font-size: 12px;
+    text-align: center;
+    border-radius: 3px;
+    background: url('../../assets/images/caption.svg') no-repeat;
+    background-size: cover;
+    color: #AEB0C2;
+  }
+
+  &__userAuthBlock {
+    position: relative;
+
+    &:first-of-type {
+      margin-left: auto;
+    }
+  }
+
+  &__captionDeleteIcon {
+    top: -25px;
+    left: 45%;
+    font-size: 12px;
+  }
+
+  &__userAuthBlock:hover &__captionIcon {
+    display: flex;
+    justify-content: center;
+    padding-top: 12px;
+  }
+
+  &__iconsAuth{
+    display: flex;
+    a {
+      margin: 0;
+    }
+    a:nth-child(1) {
+      margin-right: 20px;
+    }
+  }
+
+  &__userAuthIcon {
+    margin-left: 15px;
+    width: 18px;
+    height: 18px;
+  }
+
+  &__area {
+    font-size: 16px;
+    line-height: 26px;
+    color: rgba(21, 20, 57, 0.4);
+  }
+
+  &__textContent {
+    font-size: 16px;
+    line-height: 26px;
+    color: rgba(21, 20, 57, 0.4);
+    margin-bottom: 16px;
+
+    &:last-child {
+      margin-bottom: 72px;
+    }
+  }
+
+  &__buttonWrapper {
+    display: flex;
+    align-items: center;
+    margin-left: -10px;
+  }
+
+  div > &__button {
+    display: flex;
+    align-items: center;
+    text-align: center;
+    padding: 12px 54px;
+    margin-right: 45px;
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 26px;
+    text-transform: uppercase;
+    background: transparent;
+    border: 2px solid #EBEAED;
+    color: #1E0E62;
+  }
+
+  &__icons {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  &__circleIcon {
+    --margin: 0;
+    --width: 18px;
+    --height: 18px;
+    --color: #1E0E62;
+    --circle-width: 33.6px;
+    --circle-height: 33.6px;
+    --circle-bg-color: white;
+    --margin: 22.2px;
+
+
+    &:last-of-type {
+      --margin: 0;
+    }
+
+    & + & {
+      margin-left: 20px;
+    }
+  }
+
+  &__icons {
+    display: flex;
+    justify-content: space-around;
+  }
+
+  &__checkBlock {
+    margin-right: 40px;
+    position: relative;
+  }
+
+  &__checkBlock::after {
+    content:'';
+    position:absolute;
+    left:0; top:0;
+    width:100%;
+    height:98%;
+    border-radius: 12px;
+    display:inline-block;
+    background: linear-gradient(180deg, rgba(47, 24, 147, 0.8) 0%, rgba(0, 0, 0, 0.16) 100%);
+  }
+
+  &__checkText {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: #fff;
+    text-align: center;
+    z-index: 2;
+    font-size: 24px;
+  }
+
+  &__deleteIcon {
+    font-size: 40px;
+  }
+
+  &__isSmall {
+    #{$self}__content {
+      flex: 0 0 350px;
+      width: 350px;
+    }
+
+    #{$self}__textContent {
+      margin-bottom: 2px;
+
+      &:last-child {
+        margin-bottom: 20px;
+      }
+    }
+
+    #{$self}__title {
+      margin-bottom: 10px;
+    }
+
+    #{$self}__buttonWrapper {
+      justify-content: space-between;
+    }
+
+    #{$self}__circleIcon {
+      margin-left: 22px;
+    }
+
+    div > #{$self}__button {
+      padding: 12px 26px;
+      margin-right: 35px;
+    }
+  }
+}

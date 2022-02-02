@@ -1,0 +1,94 @@
+.addEvents {
+  width: 100%;
+  margin-bottom: 320px;
+
+  &__input {
+    border: 1px solid #9A9CAD;
+    border-radius: 5px;
+  }
+
+  &__block {
+    width: 100%;
+    display: flex;
+    margin-bottom: 32px;
+
+    &:nth-child(2) {
+      margin-bottom: 40px;
+    }
+    &:nth-child(5) {
+      align-items: center;
+    }
+  }
+
+  &__dateIcon {
+    width: 20px;
+    height: 20px;
+  }
+  
+  &__addImg {
+    color: #9a9cad;
+    border: 1px solid #9a9cad;
+    background-color: #fff;
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 26px;
+  }
+
+  &__addDate {
+    display: flex;
+    align-items: center;
+  }
+
+  &__submitForm {
+    width: 100%;
+    height: 50px;
+    background: #25DAC5;
+    border: none;
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 26px;
+    color: #fff;
+    margin-bottom: 19px;
+  }
+
+  &__dateInput {
+    &::placeholder {
+      opacity: 0.75;
+      color: #9a9cad;
+      overflow: initial;
+      transform: translateX(20px);
+    }
+  }
+
+  &__nameInput {
+    width: 570px;
+    height: 43.53px;
+    &::placeholder {
+      opacity: 0.4;
+      color: #9a9cad;
+      overflow: initial;
+      transform: translateX(20px);
+    }
+  }
+
+  &__contentInput {
+    width: 570px;
+    height: 179.24px;
+  }
+
+  &__dateInput {
+    width: 125.74px;
+    height: 26px;
+    margin-right: 5px;
+    background: #AEB0C22B;
+  }
+
+  &__blockTitle {
+    width: 184px;
+    margin-left: 15px;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 20px;
+    color: #9A9CAD;
+  }
+}

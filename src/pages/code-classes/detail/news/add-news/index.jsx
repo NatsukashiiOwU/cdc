@@ -33,7 +33,7 @@ function AddNews() {
         method: 'post',
         headers: {
           'Content-Type': 'application/json',
-          'x-access-token': 'token-value',
+          // 'x-access-token': 'token-value',
         },
         body: JSON.stringify(postData),
       });

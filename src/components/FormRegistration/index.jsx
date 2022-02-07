@@ -13,7 +13,7 @@ const FormRegistration = ({ className }) => {
   const enterEmail = useCallback((e) => setEmail(e.target.value), []);
   const enterUniversity = useCallback((e) => setUniversity(e.target.value), []);
 
-  const url = 'http://localhost:8080/api/register';
+  const url = 'http://localhost:8080/api/users';
   const data = { name, email };
 
   async function postData() {

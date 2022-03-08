@@ -1,78 +1,78 @@
-// eslint-disable-next-line no-unused-vars
-import React, { memo, useRef, useState } from 'react';
+import React, { memo, useCallback, useState } from 'react';
 import cn from 'classnames';
+
+import axios from 'axios';
+
+import { useSelector } from 'react-redux';
+import authHeader from '../../../../../services/auth-header';
 
 import styles from './AddNews.module.scss';
 
 import Icon from '../../../../../components/UI/Icon';
 import Button from '../../../../../components/UI/Button';
 
-function AddNews() {
-  const baseURL = 'http://localhost:8080/api/news';
+const AddNews = () => {
+  // eslint-disable-next-line camelcase
+  const { user } = useSelector((state) => state.auth);
+
+  const [date, setDate] = useState('');
+  const [article, setArticle] = useState('');
+  const [contents, setContents] = useState('');
+  const [banner, setBanner] = useState('');
+  const [pictures, setPictures] = useState('');
+
+  const enterDate = useCallback((e) => {
+    setDate(e.target.value);
+  }, [date]);
+
+  const enterArticle = useCallback((e) => {
+    setArticle(e.target.value);
+  }, [article]);
+
+  const enterContents = useCallback((e) => {
+    setContents(e.target.value);
+  }, [contents]);
+
+  const enterBanner = useCallback((e) => {
+    setBanner(e.target.value);
+  }, [banner]);
+
+  const enterPictures = useCallback((e) => {
+    setPictures(e.target.value);
+  }, [pictures]);
 
   // eslint-disable-next-line camelcase
-  const post_title = useRef(null);
-  // eslint-disable-next-line camelcase
-  const post_description = useRef(null);
+  const { cdc_id } = user;
 
-  // eslint-disable-next-line no-unused-vars
-  const [postResult, setPostResult] = useState(null);
-
-  const fortmatResponse = (res) => JSON.stringify(res, null, 2);
-
-  // eslint-disable-next-line no-unused-vars
-  async function postData() {
-    // eslint-disable-next-line no-shadow
-    const postData = {
-      title: post_title.current.value,
-      description: post_description.current.value,
-    };
-
-    try {
-      const res = await fetch(`${baseURL}`, {
-        method: 'post',
-        headers: {
-          'Content-Type': 'application/json',
-          // 'x-access-token': 'token-value',
-        },
-        body: JSON.stringify(postData),
-      });
-
-      if (!res.ok) {
-        const message = `An error has occured: ${res.status} - ${res.statusText}`;
-        throw new Error(message);
-      }
-
-      const data = await res.json();
-
-      const result = {
-        status: `${res.status}-${res.statusText}`,
-        headers: {
-          'Content-Type': res.headers.get('Content-Type'),
-          'Content-Length': res.headers.get('Content-Length'),
-        },
-        data,
-      };
-
-      setPostResult(fortmatResponse(result));
-    } catch (err) {
-      setPostResult(err.message);
-    }
-  }
-
-  // eslint-disable-next-line no-unused-vars
-  const clearPostOutput = () => {
-    setPostResult(null);
+  const url = 'http://localhost:8080/api/news';
+  const data = {
+    cdc_id, date, article, contents, banner, pictures,
   };
+
+  /* async function postData() { // TODO fix post rerender
+    try {
+      const response = await fetch(url, {
+        method: 'POST', // или 'PUT'
+        body: JSON.stringify(data), // данные могут быть 'строкой' или {объектом}!
+        headers: {
+          headers: JSON.stringify(authHeader()),
+        },
+      });
+      const json = await response.json();
+      console.log('Успех:', JSON.stringify(json));
+    } catch (error) {
+      console.error('Ошибка:', error);
+    }
+  } */
+
+  const postData = () => axios.post(url, data, { headers: authHeader() });
 
   return (
     <form id="addnews" className={styles.addNews}>
       <div className={styles.addNews__block}>
-        {/* eslint-disable-next-line react/destructuring-assignment */}
         <h4 className={styles.addNews__blockTitle}>Дата *:</h4>
         <div className={styles.addNews__addDate}>
-          {/* eslint-disable-next-line react/destructuring-assignment,max-len */}
-          <input className={cn(styles.addNews__dateInput, styles.addNews__input)} type="text" />
+          <input className={cn(styles.addNews__dateInput, styles.addNews__input)} type="text" onChange={enterDate} />
           <Icon className={styles.addNews__dateIcon} view="calendar" />
         </div>
       </div>
@@ -80,42 +80,36 @@ function AddNews() {
         <h4 className={styles.addNews__blockTitle}>Название *:</h4>
         <input
           className={cn(styles.addNews__nameInput, styles.addNews__input)}
-          /* eslint-disable-next-line camelcase */
-          ref={post_title}
+          onChange={enterArticle}
           placeholder="Ведите назание мероприятия (Напимер: Открытый урок ...)"
           type="text"
         />
       </div>
       <div className={styles.addNews__block}>
         <h4 className={styles.addNews__blockTitle}>Содержание *:</h4>
-        <textarea
-          /* eslint-disable-next-line camelcase */
-          ref={post_description}
-          className={cn(styles.addNews__contentInput, styles.addNews__input)}
-          type="text"
-        />
+        <textarea className={cn(styles.addNews__contentInput, styles.addNews__input)} onChange={enterContents} type="text" />
       </div>
       <div className={styles.addNews__block}>
         <h4 className={styles.addNews__blockTitle}>Обложка *:</h4>
-        <Button type="file" className={styles.addNews__addImg}>
+        <Button type="file" className={styles.addNews__addImg} onChange={enterBanner}>
           выбрать фото
         </Button>
       </div>
       <div className={styles.addNews__block}>
         <h4 className={styles.addNews__blockTitle}>Добавить фото *:</h4>
-        <Button type="file" className={styles.addNews__addImg}>
+        <Button type="file" className={styles.addNews__addImg} onChange={enterPictures}>
           выбрать фото
         </Button>
       </div>
       <div className={styles.addNews__blockSubmit}>
-        <Button className={styles.addNews__submitForm} OnClick={postData()} type="addnews">
+        {/* eslint-disable-next-line no-sequences */}
+        <Button onClick={(e) => (e.preventDefault(), postData())} className={styles.addNews__submitForm} type="addnews">
           ОТПРАВИТЬ НА МОДЕРАЦИЮ
         </Button>
       </div>
-      { postResult && <div className="alert alert-secondary mt-2" role="alert"><pre>{postResult}</pre></div> }
       <p className={styles.addNews__subTitleForm}> * Обязательное поле ввода</p>
     </form>
   );
-}
+};
 
 export default memo(AddNews);

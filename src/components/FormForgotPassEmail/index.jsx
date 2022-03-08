@@ -4,7 +4,7 @@ import Input from '../UI/Input';
 import Button from '../UI/Button';
 import styles from './FormForgotPassEmail.module.scss';
 
-const FormForgotPassEmail = ({ changeForm, className }) => {
+const FormForgotPassEmail = ({ changeForm, className }) => { // TODO add password change
   const [email, setEmail] = useState('');
 
   const enterEmail = useCallback((e) => {

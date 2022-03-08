@@ -1,6 +1,10 @@
 import cn from 'classnames';
+// eslint-disable-next-line no-unused-vars
 import React, { useEffect, useState } from 'react';
 
+import axios from 'axios';
+
+import { useSelector } from 'react-redux';
 import Adresses from '../UI/Adresses';
 
 import styles from './NewsPageBody.module.scss';
@@ -10,6 +14,8 @@ import img2 from '../../assets/images/NewsPage/img2.png';
 import Icon from '../UI/Icon';
 import SocialIcon from '../UI/SocialIcon';
 import Button from '../UI/Button';
+import authHeader from '../../services/auth-header';
+// import auth from '../../store/reducers/auth';
 
 const TEXT_CONTENT = ['21 апреля в школе №1 города Барыша состоялся День открытых дверей с участием представителей УлГУ.\n',
   'Ученики  10 класса МОУ СОШ п. Поливаново смогли поучаствовать в мастер-классах «Знакомство с возможностями языка Python».'
@@ -20,13 +26,38 @@ const ICON = ['facebook', 'vk', 'instagram', 'share'];
 
 const ADRESSES = ['Главная', 'Новости', 'МОУ СОШ п. Поливаново МО " Барышский район"'];
 
-const fetchURL = 'http://localhost:8080/api/news';
-const getItems = () => fetch(fetchURL).then((res) => res.json());
+// eslint-disable-next-line camelcase
+// const news_url = 'http://localhost:8080/api/news/cdc';
+// eslint-disable-next-line camelcase
+const news_url = 'http://localhost:8080/api/news';
 
 function NewsPageBody() {
-  const [items, setItems] = useState([[], []]);
+  // eslint-disable-next-line no-unused-vars
+  const [isLoading, setLoading] = useState(true);
 
-  useEffect(() => {
+  const { user } = useSelector((state) => state.auth);
+  const [news, setNews] = React.useState();
+
+  React.useEffect(() => {
+    // eslint-disable-next-line camelcase
+    axios.get(`${news_url}/${user.cdc_id}`, { headers: authHeader() }).then((response) => {
+      setNews(response.data);
+      setLoading(false);
+    });
+  }, []);
+
+  // eslint-disable-next-line no-unused-vars
+  /* const [items, setItems] = useState([]);
+  // eslint-disable-next-line no-unused-vars
+  const [data, setData] = useState([]);
+
+  // eslint-disable-next-line react/no-this-in-sfc,no-shadow,max-len
+  axios.get(url, { headers: authHeader() }).then((res) => { setItems(res.data); });
+
+  // eslint-disable-next-line no-unused-vars
+  const [actualid, setCount] = useState(0);
+  /* useEffect(() => {
+    // eslint-disable-next-line no-shadow
     getItems().then((data) => setItems(data));
   }, []);
   // eslint-disable-next-line no-shadow
@@ -38,18 +69,26 @@ function NewsPageBody() {
   const prevnews = () => {
     // eslint-disable-next-line no-shadow
     setCount((actualid) => actualid - 1);
-  };
+  }; */
   // eslint-disable-next-line no-return-assign
+  // alert(JSON.stringify(items));
+
+  //  alert(JSON.stringify(news));
+
+  if (isLoading) {
+    return <div className="App">Loading...</div>;
+  }
+
   return (
     <div className={styles.newsPageBody}>
       <div className={styles.newsPageBody__content}>
         <Adresses className={styles.newsPageBody__adresses} adresses={ADRESSES} />
         <div className={styles.newsPageBody__title}>
-          <div>{items[actualid].article}</div>
+          <div>{news[1].article}</div>
         </div>
         <div className={styles.newsPageBody__info}>
           <div className={styles.newsPageBody__date}>
-            {items[actualid].date}
+            {news.date}
           </div>
           <div className={styles.newsPageBody__people}>
             участников
@@ -60,18 +99,18 @@ function NewsPageBody() {
         </div>
         <div className={styles.newsPageBody__area}>
           <img src={img2} className={styles.newsPageBody__iconImage} alt="icon" />
-          {items[actualid].clc_rel}
+          UUIU
         </div>
         <div>
           {/* eslint-disable-next-line no-unused-vars */}
-          { TEXT_CONTENT.map((text) => (
-            <p className={styles.newsPageBody__textContent}>{items[actualid].contents}</p>
+          {TEXT_CONTENT.map((text) => (
+            <p className={styles.newsPageBody__textContent}>{news.contents}</p>
           ))}
         </div>
         <img src={img} alt="Картинка" className={styles.newsPageBody__mainSlideImg} />
         <div className={styles.newsPageBody__sliderWrapper}>
           <Icon view="arrowPrev" className={cn(styles.newsPageBody__arrow, styles.newsPageBody__arrow_arrowPrev)} />
-          { Array.from({ length: 3 }, () => (
+          {Array.from({ length: 3 }, () => (
             <img src={img} alt="Картинка" className={styles.newsPageBody__sliderImg} />
           ))}
           <Icon view="arrowNext" className={cn(styles.newsPageBody__arrow, styles.newsPageBody__arrow_arrowNext)} />
@@ -79,14 +118,14 @@ function NewsPageBody() {
         <div className={styles.newsPageBody__footer}>
           <div>
             {/* eslint-disable-next-line max-len */}
-            {/* eslint-disable-next-line max-len,jsx-a11y/click-events-have-key-events,jsx-a11y/no-static-element-interactions */}
-            <span className={styles.newsPageBody__prevNews} onClick={prevnews}>ПРЕДЫДУЩИЙ ПОСТ</span>
+            {/* eslint-disable-next-line max-len,jsx-a11y/click-events-have-key-events,jsx-a11y/no-static-element-interactions,no-undef */}
+            <span className={styles.newsPageBody__prevNews}>ПРЕДЫДУЩИЙ ПОСТ</span>
             {/* eslint-disable-next-line max-len */}
-            {/* eslint-disable-next-line max-len,jsx-a11y/click-events-have-key-events,jsx-a11y/no-static-element-interactions */}
-            <span className={styles.newsPageBody__nextNews} onClick={nextnews}>СЛЕДУЮЩИЙ ПОСТ</span>
+            {/* eslint-disable-next-line max-len,jsx-a11y/click-events-have-key-events,jsx-a11y/no-static-element-interactions,no-undef */}
+            <span className={styles.newsPageBody__nextNews}>СЛЕДУЮЩИЙ ПОСТ</span>
           </div>
           <div className={styles.newsPageBody__iconWrapper}>
-            { ICON.map((icon, index) => (
+            {ICON.map((icon, index) => (
               <SocialIcon
                 key={icon}
                 inCircle={ICON.length - 1 !== index}
@@ -101,14 +140,14 @@ function NewsPageBody() {
       <div className={styles.newsPageBody__actualNews}>
         <div className={styles.newsPageBody__actualNewsTitle}>Актуальные новости</div>
         {/* eslint-disable-next-line no-shadow */}
-        {Array.from(items, (item) => (
+        {Array.from(news, (item) => (
           <div className={styles.newsPageBody__newsCard}>
             <img src={img} alt="Картинка" className={styles.newsPageBody__newsCardImg} />
             <div>
               <div className={styles.newsPageBody__newsCardTitle}>
-                {item.title}
+                {item.article}
               </div>
-              <div className={styles.newsPageBody__newsCardDate}>14 июнь</div>
+              <div className={styles.newsPageBody__newsCardDate}>{item.date}</div>
             </div>
           </div>
         ))}
